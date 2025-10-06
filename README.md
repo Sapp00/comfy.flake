@@ -1,13 +1,12 @@
 # ComfyUI Setup with Nix Flake
 
-A streamlined setup for ComfyUI using Nix flakes, designed to work across NixOS (WSL with NVIDIA), Nix-Darwin (M1/M2), and provide consistent development tools.
+A streamlined setup for ComfyUI using Nix flakes, designed to work across NixOS (WSL with NVIDIA) and Nix-Darwin (M1/M2).
 
 ## Features
 
 - **Cross-platform support**: Works on Linux (WSL with NVIDIA) and macOS (M1/M2)
 - **Automatic model downloads**: Automatically downloads appropriate Flux models based on platform
 - **CUDA support**: Pre-configured CUDA environment for Linux/WSL setups
-- **Development tools**: Includes claude-code for AI-assisted development
 
 ## Prerequisites
 
@@ -17,7 +16,6 @@ A streamlined setup for ComfyUI using Nix flakes, designed to work across NixOS 
 
 ## Quick Start
 
-### Option 1: Direct Run (Recommended)
 ```bash
 # Clone this repository
 git clone <your-repo-url>
@@ -25,25 +23,6 @@ cd comfy-setup
 
 # Run ComfyUI (downloads models automatically on first run)
 nix run
-```
-
-### Option 2: Development Shell
-```bash
-# Enter ComfyUI development environment
-nix develop .#comfyui
-
-# Then manually start ComfyUI
-cd ComfyUI
-python main.py
-```
-
-### Option 3: Default Development Shell (with claude-code)
-```bash
-# Enter development shell with claude-code
-nix develop
-
-# Use claude-code for AI assistance
-claude-code
 ```
 
 ## What Gets Downloaded
@@ -119,7 +98,7 @@ git clone <custom-node-repo>
 ### Modifying the Setup
 Edit `flake.nix` to:
 - Change Python packages
-- Add new development tools
+- Add new packages
 - Modify CUDA configuration
 - Add new shell environments
 

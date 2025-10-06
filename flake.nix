@@ -1,5 +1,5 @@
 {
-  description = "ComfyUI flake for NixOS (WSL NVIDIA), Nix-Darwin (M2), and dev tools";
+  description = "ComfyUI flake for NixOS (WSL NVIDIA) and Nix-Darwin (M2)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -20,20 +20,6 @@
       {
         devShells = {
           default = pkgs.mkShell {
-            buildInputs = [
-              pkgs.git
-            ];
-
-            packages = [
-              pkgs.claude-code
-            ];
-
-            shellHook = ''
-              echo "Dev-Shell mit claude-code bereit."
-            '';
-          };
-
-          comfyui = pkgs.mkShell {
             name = "comfyui-shell";
 
             buildInputs = [
